@@ -20,6 +20,7 @@ booksApp.controller('booksCtrl',function($scope,$http){
             $scope.error = "Please Enter A Valid ISBN";
         }
         else {
+            $scope.error = "";
             $http.get("https://ws-ex1-dudi.herokuapp.com/ISBN/" + actionText).success(function (data) {
                 $scope.header = "second function - book by ISBN";
                 $scope.books.items = [data.textbooks];
@@ -37,6 +38,7 @@ booksApp.controller('booksCtrl',function($scope,$http){
             $scope.error = "Please Enter A Publisher Name";
         }
         else {
+            $scope.error = "";
             $http.get("https://ws-ex1-dudi.herokuapp.com/publisher/" + actionText).success(function(data){
                 $scope.header = "third function - book by publisher";
                 $scope.books.items = data.textbooks;
