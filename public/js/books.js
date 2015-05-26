@@ -16,7 +16,7 @@ booksApp.controller('booksCtrl',function($scope,$http){
     $scope.header = "first function - all the books";
 
     $scope.getBookByISBN = function(actionText){
-        if(isNaN(actionText)){
+        if(isNaN(actionText) || 0 === actionText.length){
             $scope.error = "Please Enter A Valid ISBN";
         }
         else {
